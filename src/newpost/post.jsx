@@ -8,11 +8,39 @@ class Post extends React.Component {
         super(props);
         console.log(props.history)
         this.state = {  
-           categories:[]
+           categories:[],
+            title: null,
+            post: null,
+            slug: null,
         }
         this.render=this.render.bind(this);
         this.getCategories=this.getCategories.bind(this);
+        this.postCategory= this.postCategory.bind(this);
 
+    }
+
+    postCategory() {
+        console.log('State', this.state)
+       
+        fetch(`${CONSTANTS.BASE_URL}${CONSTANTS.API_CONSTANTS.BLOGS.POST_BLOG}/`,{
+            method:"POST",
+            body: JSON.stringify(this.state),
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        }).then(response => response.json())
+        .then(data => {
+            if(data.success) {
+                if(this.state.title){
+                    this.props.history.push('/blogsmain');
+                }
+            } else{
+                alert('Data is invalid.');
+            }
+            
+        });
+        
     }
     getCategories(){
         fetch(`${CONSTANTS.BASE_URL}${CONSTANTS.API_CONSTANTS.BLOGS.GET_ALL_BLOGS}/`,{
@@ -51,21 +79,27 @@ class Post extends React.Component {
                                         </div>
                                     </div>
                                     <div className="form-group row mb">
+                                        <label htmlFor="inputPassword" className="col-md-2 col-lg-2 col-form-label formlabels">Slug:</label>
+                                        <div className="col-md-8 col-lg-8">
+                                            <input type="text" onChange={(event)=>{this.setState({slug:event.target.value})}} className="form-control" id="name" placeholder=""></input>
+                                        </div>
+                                    </div>
+                                    <div className="form-group row mb">
                                         <label htmlFor="inputPassword" className="col-md-2 col-lg-2 col-form-label formlabels">Title:</label>
                                         <div className="col-md-8 col-lg-8">
-                                            <input type="text" className="form-control" id="name" placeholder=""></input>
+                                            <input type="text" onChange={(event)=>{this.setState({title:event.target.value})}} className="form-control" id="name" placeholder=""></input>
                                         </div>
                                     </div>
                                     <div className="form-group row mb">
                                         <label htmlFor="inputPassword" className="col-md-2 col-lg-2 col-form-label formlabels">Post:</label>
                                         <div className="col-md-8 col-lg-8">
-                                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                                            <textarea name="" id="" cols="30" rows="10" onChange={(event)=>{this.setState({post:event.target.value})}} ></textarea>
                                         </div>
                                     </div>
                                     <div className="row">
                                         <div className="col-md-2"></div>
                                         <div className="col-md-8">
-                                            <button type="submit" className="cta-btn">Submit</button>
+                                            <button type="submit" className="cta-btn" onClick={this.postCategory}>Submit</button>
                                         </div>
                                     </div>
                                     
