@@ -1,0 +1,744 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    max-width: 1170px;
+}
+.mb{
+    margin-bottom: 30px;
+}
+.loginWrap{
+    width: 100%;
+    height: 100%;
+    height: 100vh;
+    background: #000e1c;
+    position: relative;
+    z-index: 1;
+}
+.header-wrap {
+    padding: 30px 0 20px;
+}
+.headingBox {
+    font-size: 40px;
+    color: #005bbb;
+    font-weight: 500;
+    text-transform: capitalize;
+    padding: 10px 15px;
+    border: 2px solid #005bbb;
+    text-align: center;
+    border-radius: 10px;
+}
+.loginWrap .absPosition {
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    z-index: -1;
+    max-width: 750px;
+    width: 100%;
+    object-fit: cover;
+    opacity: 0.4;
+}
+.white-text {
+    font-size: 24px;
+    font-weight: 500;
+    color: #fff;
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto;
+}
+.cta-btn {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    padding: 15px 50px;
+    background: #005bbb;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer
+}
+.cta-btn a{
+    text-decoration: none;
+    display: block;
+}
+.cta-btn:hover {
+    background: #fff;
+    color: #005bbb;
+}
+.header-wrap .rightCol {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 350px;
+    margin: 0 0 0 auto;
+}
+.section2 .row {
+    min-height: 500px;
+    align-items: center;
+}
+.list {
+    max-width: 450px;
+    margin: 0 auto;
+}
+.list li {
+    font-size: 22px;
+    font-weight: 500;
+    color: #fff;
+}
+/************************* Inner header *******************/
+.headWrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 50px 0
+}
+.headWrap ul{
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+.headWrap .headleft ul li{
+    margin-right: 50px;
+}
+.headWrap .headleft ul li:last-child{
+    margin-right: 0;
+}
+.headWrap ul li a{
+    font-size: 16px;
+}
+.headWrap .headleft ul li.dropLinks{
+    position: relative;
+}
+.headWrap .headleft .dropdown {
+    padding: 10px;
+    position: absolute;
+    width: 200px;
+    display: inline-block;
+    background: #fff;
+    border-radius: 10px;
+    left: 0%;
+    right: 0%;
+    margin-top: 10px;
+    transition: 0.5s ease-in-out;
+}
+.headWrap .headleft .dropdown li{
+    margin: 0;
+    padding: 5px 0;
+}
+.headWrap .headleft .dropdown li a{
+    font-size: 14px;
+    font-weight: 500;
+    color: #005bbb;
+    text-decoration: none;
+}
+.headWrap .headleft ul .toggle{
+    margin-left: 15px;
+    padding: 5px;
+    border-radius: 50%;
+    border: 2px solid #005bbb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+}
+.headWrap .headcenter {
+    width: calc(100% - 450px);
+}
+.headWrap .headcenter ul li{
+    margin-right: 80px;
+}
+.headWrap .headcenter ul li a{
+    font-weight: 600;
+    font-size: 16px;
+    color: #000;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.headWrap .headcenter ul li:last-child{
+    margin-right: 0;
+}
+.headWrap .headcenter ul li:last-child{
+    margin-right: 0;
+}
+.headWrap .headright ul li:last-child{
+    margin-left: 80px;
+}
+/************************ Login Form SCreen  **********************/
+.loginFields{
+    margin: 150px 0 100px 0;
+}
+.loginFields .loginFormWrap .cta-btn{
+    background: transparent;
+    color: #fff;
+    border: 2px solid #005bbb;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    display: inline-block;
+    width: 100%;
+    padding: 10px 10px;
+    text-align: center;
+    font-size: 14px;
+}
+.loginFields .loginFormWrap .cta-btn:hover{
+    background: #fff;
+    color: #005bbb;
+}
+.formlabels{
+    font-weight: 500;
+    color: #fff;
+    font-size: 16px !important;
+}
+.labels{
+    font-weight: 600;
+    color: #fff;
+    font-size: 14px !important;
+}
+a.labels{
+    text-decoration: none;
+}
+/******************** Sign UP Screen  ***************************/
+.signupWrap .signUpFields {
+    margin-top: 80px;
+}
+.signUpFields .cta-btn{
+    background: transparent;
+    color: #fff;
+    border: 2px solid #005bbb;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    display: inline-block;
+    width: 100%;
+    padding: 10px 10px;
+    text-align: center;
+    font-size: 14px;
+}
+.signUpFields .cta-btn:hover{
+    background: #fff;
+    color: #005bbb;
+}
+.signUpFields input[type=checkbox]{
+    transform: scale(1.4);
+    margin-right: 15px;
+}
+/**************** Personal Information Screen CSS  */
+.infoWrap .interests{
+    align-items: center;
+}
+.infoFields {
+    margin: 50px 0 0 0;
+}
+.infoWrap textarea{
+    width: 100%;
+    height: 100px;
+    border-radius: 10px;
+    resize: none;
+    outline: none;
+    padding: 5px;
+}
+.infoWrap input[type=file]{
+   display: none;
+}
+.infoWrap .fileLabel{
+    width: 100%;
+    text-align: center;
+    background: #005bbb;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    font-weight: 600;
+    font-size: 16px;
+}
+.infoWrap .fileLabel svg{
+    margin-right: 10px;
+}
+/*************************** BLOGS *****************/
+.blogWrap{
+    background: #e2effd;
+    min-height: 100vh;
+}
+.blogsListing .lists{
+    margin: 50px 0 30px 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+.blogsListing .blogsLabel {
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    background: #005bbb;
+    padding: 10px 50px 10px 20px;
+    max-width: 250px;
+    width: 100%;
+}
+.blogsListing .thumb{
+    max-width: 140px;
+    width: 100%;
+    max-height: 130px;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+}
+.blogsListing .detail {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+.blogsListing .detail .blogCatg{
+    font-size: 12px;
+    font-weight: 500;
+    color: #a7a7a7;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+.blogsListing .detail .blogDate{
+    font-size: 12px;
+    font-weight: 500;
+    color: #6d6d6d;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+.blogsListing .detail .blogTitle {
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+    max-width: 220px;
+    line-height: 1.4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.blogsListing .detail a{
+    font-size: 13px;
+    font-weight: 500;
+    color: #005bbb;
+}
+.blogsListing .trendList{
+    border-bottom: 1px solid #cbd5e0;
+    padding-bottom: 25px;
+}
+.blogsListing .trendList .blogDate{
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+.blogsListing .trendList .blogTitle {
+    max-width: 300px;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.5;
+    margin-bottom: 5px;
+}
+.blogsListing .trendList a{
+    font-size: 16px;
+    text-decoration: none;
+}
+/*************************** Favourites Screen *****************/
+.favoritesWrap{
+    min-height: 100vh;
+    background: #000e1c;
+    padding: 50px 0; 
+}
+.favoritesWrap .headingBox{
+    width: fit-content;
+    margin: 0 auto;
+    padding: 10px 50px;
+}
+.favoritesWrap .catgsWrap{
+    margin-top: 60px;
+}
+.catgThumb{
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
+}
+.catgThumb input {
+    position: absolute;
+    right: 1px;
+    top: 0px;
+    transform: scale(1.7);
+    border-radius: 50% !important;
+    box-shadow: none;
+    margin: 0;
+}
+.catgThumb .form-check-input:focus{
+    box-shadow: none;
+}
+.catgThumb label{
+    width: 100%;
+    display: block;
+}
+.catgThumb label img{
+    width: 100%;
+    min-height: 180px;
+    max-height: 180px;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.catgThumb .title{
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    margin: 10px 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+.favoritesWrap .cta-btn{
+    display: inherit;
+    background: transparent;
+    border: 1px solid #005bbb;
+    margin: 0 auto;
+}
+.favoritesWrap .cta-btn:hover{
+    background: #fff;
+}
+/******************* Blog Detail Screen ***************************/
+.blogDetailWrap{
+    background: #e2effd;
+    min-height: 100vh;
+    padding: 50px 0;
+}
+.blogDetailWrap .headingBox{
+    width: fit-content;
+    margin: 0 auto;
+    padding: 10px 50px;
+}
+.blogDetailWrap .detailWrap{
+    margin: 50px 0;
+}
+.blogDetailWrap .detailWrap .imgWrap{
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.blogDetailWrap .detailWrap .imgWrap img{
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.detailWrap .textWrap .catgName{
+    font-size: 18px;
+    font-weight: 500;
+    color: #191919;
+}
+.detailWrap .textWrap .catgTitle{
+    font-size: 35px;
+    font-weight: 500;
+    color: #005bbb;
+    margin: 20px 0; 
+}
+.detailWrap .textWrap .blogDate{
+    font-size: 16px;
+    font-weight: 400;
+    color: #191919;
+}
+.detailWrap .textWrap .text{
+    font-size: 15px;
+    font-weight: 400;
+    color: #191919;
+    margin-bottom: 20px
+}
+.detailWrap .textWrap .sharing{
+    display: flex;
+}
+.detailWrap .textWrap .sharing .wrap{
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+.detailWrap .textWrap .sharing .link{
+    background: #000;
+    font-size: 14px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    color: #fff;
+}
+.detailWrap .textWrap .sharing .label{
+    font-weight: 400;
+    font-size: 14px;
+    color: #191919;
+}
+.commentsSection{
+    margin-bottom: 80px;
+}
+.commentsSection .heading{
+    font-size: 30px;
+    font-weight: 500;
+    color: #005bbb;
+    margin-bottom: 20px;
+}
+.commentsSection .textBox textarea{
+    width: 100%;
+    background: #fff;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    resize: none;
+    max-height: 100px;
+    height: 100%;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    color: #000;
+    font-weight: 500;
+    padding: 15px;
+}
+.commentsSection .textBox textarea::placeholder{
+    color: #a7a7a7;
+}
+.commentsSection .textBox .cta-btn{
+    border: 1px solid #005bbb;
+}
+.reviewSection {
+    padding: 30px 0;
+    border-top: 1px solid #6d6d6d;
+}
+.reviewSection .reviewWrap{
+    display: flex;
+    flex-wrap: wrap;
+}
+.reviewSection .reviewWrap .profile{
+    margin-right: 10px;
+}
+.reviewSection .reviewWrap .profile img{
+    max-width: 70px;
+    width: 100%;
+    max-height: 70px;
+    min-height: 70px;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+.reviewSection .reviewWrap .comments {
+    width: calc(100% - 110px);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+    margin-left: auto;
+}
+.reviewSection .reviewWrap .comments .name {
+    display: flex;
+    justify-content: space-between;
+}
+.reviewSection .reviewWrap .comments .name p{
+    display: flex;
+    margin: 0;
+}
+.reviewSection .reviewWrap .comments .name .replier{
+    font-size: 20px;
+    font-weight: 600;
+    color: #191919;
+}
+.reviewSection .reviewWrap .comments .name .link{
+    background: #000;
+    font-size: 14px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    color: #fff;
+}
+.reviewSection .reviewWrap .comments .date{
+    font-size: 14px;
+    font-weight: 400;
+    color: #191919;
+}
+.reviewSection .reviewWrap .comments .reply{
+    font-size: 15px;
+    font-weight: 400;
+    color: #191919;
+}
+/************************************** NEW Post Screen *********************************/
+.newPostWrap{
+    background: #e2effd;
+    min-height: 100vh;
+    padding: 50px 0;
+}
+.newPostWrap .headingBox{
+    width: fit-content;
+    padding: 10px 30px;
+    margin: 0 auto;
+}
+.newPostWrap .writePostWrap .innerWrap{
+    max-width: 800px;
+    width: 100%;
+    margin: 50px auto;
+}
+.newPostWrap .writePostWrap .innerWrap label{
+    font-size: 18px;
+    font-weight: 500;
+    color: #005bbb;
+}
+.newPostWrap .writePostWrap .innerWrap select{
+    font-weight: 400;
+    font-size: 13px;
+    color: #a7a7a7;
+    padding: 10px;
+    box-shadow: none;
+    border-radius: 10px;
+}
+.newPostWrap .writePostWrap .innerWrap input{
+    font-size: 14px;
+    font-weight: 500;
+    color: #191919;
+    padding: 10px;
+    box-shadow: none;
+    border-radius: 10px;
+}
+.newPostWrap .writePostWrap .innerWrap textarea{
+    width: 100%;
+    max-height: 300px;
+    height: 100%;
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid #ced4da;
+    padding: 10px;
+    resize: none;
+}
+.newPostWrap .writePostWrap .innerWrap .cta-btn{
+    background: #000;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    border: 1px solid #000;
+}
+.newPostWrap .writePostWrap .innerWrap .cta-btn:hover{
+    background: #fff;
+    color: #000;
+}
+
+/************************************ Profile Screen Starts **************************/
+.profileWrap{
+    background: #e2effd;
+    min-height: 100vh;
+    padding: 50px 0;
+}
+.profileWrap .headingBox{
+    width: fit-content;
+    padding: 10px 50px;
+    margin: 0 auto;
+}
+.profileWrap .innerWrap{
+    margin: 50px 0;
+}
+.profileWrap .innerWrap .profileDesc{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.profileWrap .innerWrap .profileDesc .profImg{
+    margin-right: 20px;
+}
+.profileWrap .innerWrap .profileDesc .profImg img{
+    max-width: 190px;
+    width: 100%;
+    min-height: 190px;
+    max-height: 190px;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    border: 4px solid #005bbb;
+}
+.profileWrap .innerWrap .profileDesc .profileValues .name{
+    font-weight: 500;
+    font-size: 35px;
+    color: #005bbb;
+    margin-bottom: 20px;
+}
+.profileWrap .innerWrap .profileDesc .profileValues .following{
+    display: flex;
+    flex-wrap: wrap;
+}
+.profileWrap .innerWrap .profileDesc .profileValues .following div{
+    margin-right: 80px;
+    text-align: center;
+}
+.profileWrap .innerWrap .profileDesc .profileValues .following .count{
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: #191919;
+    text-align: center;
+    margin-bottom: 0;
+}
+.profileWrap .innerWrap .profileDesc .profileValues .following .label{
+    font-weight: 400;
+    font-size: 18px;
+    color: #191919;
+}
+.profileWrap .innerWrap .aboutBlogger{
+    margin: 50px 0;
+}
+.profileWrap .innerWrap .heading{
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    color: #191919;
+}
+.profileWrap .innerWrap .aboutBlogger .text{
+    font-size: 16px;
+    font-weight: 400;
+    color: #191919;
+}
+.postsLists .postThumb .thumbImg img{
+    width: 100%;
+    max-height: 340px;
+    min-height: 340px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 15px;
+}
+.postsLists .postThumb .thumbDesc{
+    margin: 20px 0;
+}
+.postsLists .postThumb .thumbDesc .date{
+    font-size: 14px;
+    font-weight: 400;
+    color: #191919;
+    margin-bottom: 10px;
+}
+.postsLists .postThumb .thumbDesc .title{
+    font-size: 20px;
+    font-weight: 600;
+    color: #191919;
+    margin-bottom: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+.postsLists .postThumb .thumbDesc .desc {
+    font-size: 15px;
+    font-weight: 400;
+    color: #191919;
+    margin-bottom: 10px;
+    max-height: 65px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.postsLists .postThumb .thumbDesc a{
+    font-weight: 600;
+    font-size: 16px;
+    color: #005bbb;
+    text-decoration: none;
+}
