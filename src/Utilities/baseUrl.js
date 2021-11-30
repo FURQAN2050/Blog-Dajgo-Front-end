@@ -5,8 +5,11 @@ let CONSTANTS = {
             LOGIN: '/authentication/login',
             SIGNUP: '/authentication/register'
         },
-        BLOGS:{
-            GET_ALL_BLOGS:'/blog/api/getBlogs'
+        BLOGS: {
+            GET_ALL_BLOGS: '/blog/api/getBlogs'
+        },
+        CATEGORIES: {
+            GET_ALL_CATEGORIES: '/blog/api/getBlogs'
         }
     }
 }

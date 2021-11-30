@@ -1,5 +1,6 @@
 
 import React from 'react';
+import CONSTANTS from '../Utilities/baseUrl';
 
 
 class Post extends React.Component {
@@ -7,14 +8,27 @@ class Post extends React.Component {
         super(props);
         console.log(props.history)
         this.state = {  
-            username:null,
-            password:null,
-            login:false,
-            store:null
+           categories:[]
         }
         this.render=this.render.bind(this);
-        this.login=this.login.bind(this);
+        this.getCategories=this.getCategories.bind(this);
 
+    }
+    getCategories(){
+        fetch(`${CONSTANTS.BASE_URL}${CONSTANTS.API_CONSTANTS.BLOGS.GET_ALL_BLOGS}/`,{
+            method:"GET",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        }).then(response => response.json())
+        .then(data => {
+            data.forEach(element => {
+                element.created_on=element.created_on.substring(0, 10);
+                element.shortContent=element.content.substring(0, 35);
+            });
+            this.setState({blog:data})
+        });
     }
     render() { 
         return (
