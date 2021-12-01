@@ -8,7 +8,7 @@ import CONSTANTS from "../Utilities/baseUrl";
 class Login extends Component {
     constructor(props) {
         super(props);
-        console.log(props.history)
+        // console.log(props.history)
         this.state = {  
             username:null,
             password:null,
@@ -17,7 +17,6 @@ class Login extends Component {
         }
         this.render=this.render.bind(this);
         this.login=this.login.bind(this);
-
     }
     login(){
         // const history = useHistory();

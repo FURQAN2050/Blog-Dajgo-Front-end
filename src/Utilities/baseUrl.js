@@ -7,11 +7,16 @@ let CONSTANTS = {
     },
     BLOGS: {
       GET_ALL_BLOGS: '/blog/api/getBlogs',
-      POST_BLOG: '/blog/add',
+      POST_BLOG: '/blog/api/createBlog',
+      GET_SINGLE_BLOG: '/blog/api/getBlog'
     },
     CATEGORIES: {
-      GET_ALL_CATEGORIES: '/blog/api/getBlogs',
+      GET_ALL_CATEGORIES: '/blogcategory/api/getCategories',
     },
+    COMMENTS: {
+      GET_POST_COMMENTS: '/blogcomment/api/GetPostComment',
+      POST_POSTCOMMENTS:'/blogcomment/api/addPostComment'
+    }
   },
 };
 

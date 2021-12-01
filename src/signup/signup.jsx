@@ -95,10 +95,10 @@ class Signup extends React.Component {
                                                 <input type="password" className="form-control" onChange={(event)=>{this.setState({password2:event.target.value})}} id="passowrd" placeholder=""></input>
                                             </div>
                                         </div>
-                                        <div className="mb-3 form-check">
+                                        {/* <div className="mb-3 form-check">
                                             <input type="checkbox" className="form-check-input" onChange={(event)=>{this.setState({is_author :event.target.value })}} id="exampleCheck1"></input>
                                             <label className="form-check-label formlabels" htmlFor="exampleCheck1">Sign up as an author/blogger</label>
-                                        </div>
+                                        </div> */}
                                         <div className="row">
                                             <div className="col-md-3 col-lg-3">
                                                 <Link to="/" className="cta-btn">Back</Link>

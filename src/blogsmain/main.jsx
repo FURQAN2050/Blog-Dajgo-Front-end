@@ -61,7 +61,7 @@ class Main extends React.Component {
                                     <p className="blogCatg">{blog.title}</p>
                                     <span className="blogDate">Date {blog.created_on}</span>
                                     <p className="blogTitle">{blog.shortContent}..</p>
-                                    <Link to="#">Read More</Link>
+                                    <Link to={"/blogdetail/"+blog.id}>Read More</Link>
                                 </div>
                             </div>
                                           ))

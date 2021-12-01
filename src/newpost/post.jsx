@@ -10,13 +10,15 @@ class Post extends React.Component {
         this.state = {  
            categories:[],
             title: null,
-            post: null,
+            content: null,
             slug: null,
+            status:1,
+            author_id:2
         }
         this.render=this.render.bind(this);
         this.getCategories=this.getCategories.bind(this);
         this.postCategory= this.postCategory.bind(this);
-
+        this.getCategories();
     }
 
     postCategory() {
@@ -43,7 +45,7 @@ class Post extends React.Component {
         
     }
     getCategories(){
-        fetch(`${CONSTANTS.BASE_URL}${CONSTANTS.API_CONSTANTS.BLOGS.GET_ALL_BLOGS}/`,{
+        fetch(`${CONSTANTS.BASE_URL}${CONSTANTS.API_CONSTANTS.CATEGORIES.GET_ALL_CATEGORIES}/`,{
             method:"GET",
             headers: {
                 'Accept': 'application/json',
@@ -51,11 +53,8 @@ class Post extends React.Component {
             }
         }).then(response => response.json())
         .then(data => {
-            data.forEach(element => {
-                element.created_on=element.created_on.substring(0, 10);
-                element.shortContent=element.content.substring(0, 35);
-            });
-            this.setState({blog:data})
+            console.log(data);
+            this.setState({categories:data})
         });
     }
     render() { 
@@ -66,15 +65,13 @@ class Post extends React.Component {
                         <p className="headingBox">Write A New Post</p>
                         <div className="writePostWrap">
                             <div className="innerWrap">
-                                <form action="">
+                                {/* <form action=""> */}
                                     <div className="form-group row mb">
                                         <label htmlFor="inputPassword" className="col-md-2 col-lg-2 col-form-label formlabels">Category:</label>
                                         <div className="col-md-8 col-lg-8">
                                         <select class="form-select form-select-lg" aria-label=".form-select-lg example">
                                             <option selected disabled>Select Category</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
+                                            <option value="1">Kitchen Hacks</option>
                                         </select>
                                         </div>
                                     </div>
@@ -93,7 +90,7 @@ class Post extends React.Component {
                                     <div className="form-group row mb">
                                         <label htmlFor="inputPassword" className="col-md-2 col-lg-2 col-form-label formlabels">Post:</label>
                                         <div className="col-md-8 col-lg-8">
-                                            <textarea name="" id="" cols="30" rows="10" onChange={(event)=>{this.setState({post:event.target.value})}} ></textarea>
+                                            <textarea name="" id="" cols="30" rows="10" onChange={(event)=>{this.setState({content:event.target.value})}} ></textarea>
                                         </div>
                                     </div>
                                     <div className="row">
@@ -103,7 +100,7 @@ class Post extends React.Component {
                                         </div>
                                     </div>
                                     
-                                </form>
+                                {/* </form> */}
                             </div>
                         </div>
                     </div>

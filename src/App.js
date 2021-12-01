@@ -7,6 +7,7 @@ import Favorites from "./favorite/favorites";
 import Detail from "./blogdetail/detail";
 import Post from "./newpost/post";
 import Profile from "./authprofile/profile"
+import Header from "./header/header";
 
 import "./css/front-styles.css"
 
@@ -18,6 +19,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/login" component={Login} />
+        <Route path="/login" component={Header} />
         <Route path="/signup" component={Signup} />
         <Route path="/personal-info">
           <Info />
@@ -26,9 +28,7 @@ function App() {
         <Route path="/favorite">
           <Favorites />
         </Route>
-        <Route path="/blogdetail">
-          <Detail />
-        </Route>
+        <Route path="/blogdetail/:id" component={Detail} />
         <Route path="/newpost" component={Post} />
         <Route path="/authprofile">
           <Profile />
