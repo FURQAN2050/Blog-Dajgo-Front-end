@@ -1,11 +1,13 @@
 // import blogimg from "/images/blogmain.jpg"
 // import profile from "/images/profile.jpg"
+import "../css/front-styles.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faThumbsUp,
   faUserPlus,
   faShareAlt,
   faShare,
+  faThumbsDown,
 } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 import CONSTANTS from "../Utilities/baseUrl";
@@ -19,24 +21,33 @@ class Detail extends React.Component {
       currentBlogComments: [],
       currentUser: null,
       commentsToBeAdded: "",
+      liked: null,
+      likeButtonLabel: "Like Post",
+      currenUser: null,
     };
     this.render = this.render.bind(this);
+    this.getloggedInUser = this.getloggedInUser.bind(this);
+    this.setState({ currentUser: this.getloggedInUser() });
     this.setCurrentBlog = this.setCurrentBlog.bind(this);
     this.getblogComments = this.getblogComments.bind(this);
-    this.getloggedInUser = this.getloggedInUser.bind(this);
     this.postComments = this.postComments.bind(this);
+    // this.renderlikedButton = this.renderlikedButton.bind(this);
+    this.updateLike = this.updateLike.bind(this);
 
     this.getloggedInUser();
     this.setCurrentBlog();
     this.getblogComments();
   }
   setCurrentBlog() {
+    const currentUser = this.getloggedInUser();
+
     fetch(
       `${CONSTANTS.BASE_URL}${CONSTANTS.API_CONSTANTS.BLOGS.GET_SINGLE_BLOG}/`,
       {
         method: "POST",
         body: JSON.stringify({
           id: this.props?.match?.params?.id,
+          user_id: currentUser?.user_id,
         }),
         headers: {
           Accept: "application/json",
@@ -46,10 +57,16 @@ class Detail extends React.Component {
     )
       .then((response) => response.json())
       .then((data = []) => {
-        console.log(data);
-        let blog = data[0];
-        blog.updated_on = blog?.updated_on?.substring(0, 10);
-        this.setState({ currentBlog: blog });
+        console.log(data.is_liked);
+        if (data.success) {
+          let blog = data.post[0];
+          blog.updated_on = blog?.updated_on?.substring(0, 10);
+          this.setState({ currentBlog: blog });
+          // this.state.liked = data.is_liked;
+          this.setState({
+            liked: data.is_liked ? true : false,
+          });
+        }
       });
   }
   getblogComments() {
@@ -82,6 +99,29 @@ class Detail extends React.Component {
     const loggedInUser = JSON.parse(localStorage.getItem("login"));
     console.log(loggedInUser);
     return loggedInUser?.token;
+  }
+  updateLike() {
+    const currentUser = this.getloggedInUser();
+    fetch(
+      `${CONSTANTS.BASE_URL}${CONSTANTS.API_CONSTANTS.BLOGS.LIKES}/`,
+      {
+        method: "POST",
+        body: JSON.stringify({
+          post_id: this.props?.match?.params?.id,
+          user_id: currentUser?.user_id,
+        }),
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      }
+    )
+      .then((response) => response.json())
+      .then((data = []) => {
+        if (data.success) {
+          this.setCurrentBlog();
+        }
+      });
   }
   postComments() {
     console.log(this.state.commentsToBeAdded);
@@ -126,6 +166,31 @@ class Detail extends React.Component {
                   <div className="textWrap">
                     <p className="catgName">
                       <span className="">Category: </span>Kitchen Hacks
+                    </p>
+                    <p>
+                      <div>
+                        {
+                          <div>
+                            {this.state.liked ? (
+                              <button
+                                className="btn btn-primary"
+                                onClick={this.updateLike}
+                              >
+                                Dislike
+                                <FontAwesomeIcon icon={faThumbsDown} />
+                              </button>
+                            ) : (
+                              <button
+                                className="btn btn-primary"
+                                onClick={this.updateLike}
+                              >
+                                like
+                                <FontAwesomeIcon icon={faThumbsUp} />
+                              </button>
+                            )}
+                          </div>
+                        }
+                      </div>
                     </p>
                     <p className="catgTitle">
                       {this.state?.currentBlog?.title}
@@ -187,6 +252,7 @@ class Detail extends React.Component {
                 </div>
               </div>
             </div>
+            <div>{/* {this.renderlikedButton} */}</div>
             <div className="commentsSection">
               <p className="heading">Comments:</p>
               <form action="">
