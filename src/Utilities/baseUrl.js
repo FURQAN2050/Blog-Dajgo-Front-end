@@ -9,7 +9,8 @@ let CONSTANTS = {
       GET_ALL_BLOGS: '/blog/api/getBlogs',
       POST_BLOG: '/blog/api/createBlog',
       GET_SINGLE_BLOG: '/blog/api/getBlog',
-      LIKES: '/blog/api/likeBlog'
+      LIKES: '/blog/api/likeBlog',
+      USER_PROFILE: '/blog/api/userProfile'
     },
     CATEGORIES: {
       GET_ALL_CATEGORIES: '/blogcategory/api/getCategories',

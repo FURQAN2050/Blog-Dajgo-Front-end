@@ -23,7 +23,7 @@ class Main extends React.Component {
     let headers = {
       Accept: "application/json",
       "Content-Type": "application/json",
-      Authorization: `Bearer ${access_token}`,
+      // Authorization: `Bearer ${access_token}`,
     };
     console.log(headers);
     fetch(
@@ -34,13 +34,15 @@ class Main extends React.Component {
       }
     )
       .then((response) => response.json())
-      .then((data) => {
+      .then((data = []) => {
         console.log(data);
-        data.forEach((element) => {
-          element.created_on = element.created_on.substring(0, 10);
-          element.shortContent = element.content.substring(0, 35);
-        });
-        this.setState({ blog: data });
+        if (data.length) {
+          data.forEach((element) => {
+            element.created_on = element.created_on.substring(0, 10);
+            element.shortContent = element.content.substring(0, 35);
+          });
+          this.setState({ blog: data });
+        }
       });
   }
   render() {
@@ -68,7 +70,7 @@ class Main extends React.Component {
                             />
                           </div>
                           <div className="detail">
-                            <p className="blogCatg">{blog.title}</p>
+                            <p className="title">{blog.title}</p>
                             <span className="blogDate">
                               Date {blog.created_on}
                             </span>

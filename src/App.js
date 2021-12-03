@@ -30,9 +30,7 @@ function App() {
         </Route>
         <Route path="/blogdetail/:id" component={Detail} />
         <Route path="/newpost" component={Post} />
-        <Route path="/authprofile">
-          <Profile />
-        </Route>
+        <Route path="/authprofile" component={Profile} />
       </Switch>
     </Router >
   );
